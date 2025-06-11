@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FridgeEasy - Minha Conta</title>
+  <link rel="stylesheet" href="./assets/css/usuario.css"/>
+  <link rel="stylesheet" href="../assets/style/global.css">
+</head>
+<body>
+  <a href="../index.html" class="back-link">Voltar</a>
+  <h1 class="title">FridgeEasy</h1>
+  <h2 class="title">Minha conta</h2>
+  <div class="profile-container">
+    <div class="card">
+      <div class="profile-header">
+        <!-- <img id="profile-photo" src="https://via.placeholder.com/150" alt="Profile Photo"> -->
+        <div class="user-info">
+          <div class="editable-field">
+            <input type="text" id="name"disabled />
+            <button class="edit-btn" onclick="toggleEdit('name')">Alterar</button>
+          </div>
+          <div class="editable-field">
+            <input type="email" id="email" disabled />
+            <button class="edit-btn" onclick="toggleEdit('email')">Alterar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="preferences">
+        <h3>Preferências Alimentares</h3>
+        <div id="preferences-options" class="options">
+          <label><input type="checkbox" id="pref-porcoes" disabled> Porções</label>
+          <label><input type="checkbox" id="pref-sobremesas" disabled> Sobremesas</label>
+          <label><input type="checkbox" id="pref-dieta" disabled> Dieta</label>
+          <label><input type="checkbox" id="pref-refeicoes" disabled> Refeições</label>
+          <label><input type="checkbox" id="pref-vegetariano" disabled> Vegetariano</label>
+          <label><input type="checkbox" id="pref-vegano" disabled> Vegano</label>
+        </div>
+        <button class="edit-btn" onclick="togglePreferences()">Alterar</button>
+      </div>
+
+      <div class="action-buttons">
+        <button id="logout" class="logout-btn">Sair</button>
+        <button class="delete-btn" onclick="showDeleteModal()" >Apagar minha conta</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="modal-message">Mensagem aqui</p>
+      <button id="modal-button" class="btn-outline">Fechar</button>
+    </div>
+  </div>
+  
+  <div id="delete-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 class="modal-title">Deseja realmente excluir sua conta?</h2>
+      <div class="modal-buttons">
+        <button id="confirm-delete" class="btn-red">Excluir conta</button>
+        <button id="cancel-delete" class="btn-outline">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="./assets/js/usuario.js"></script>
+</body>
+</html>

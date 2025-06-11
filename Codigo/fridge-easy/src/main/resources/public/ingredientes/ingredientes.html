@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FridgeEasy - Meus Ingredientes</title>
+    <link rel="stylesheet" href="./assets/css/ingredientes.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="img-logo">
+        <a href="../pagina-principal/index.html"
+          ><img src="../assets/img/fridge-easy-logo.png" alt="Logo"
+        /></a>
+      </div>
+      <a href=""></a>
+    </header>
+
+    <main class="content">
+      <section class="content-section">
+        <!-- Botões principais -->
+        <div class="button-container">
+          <button id="btnMinhasReceitas" class="primary-button">
+            <i class="ph ph-book-bookmark"></i>
+            Ver Minhas Receitas
+          </button>
+          <button id="btnReceitas" class="primary-button">
+            <i class="ph ph-book"></i>
+            Ver Receitas
+          </button>
+          <button id="btnAddIngrediente" class="primary-button add-ingredient">
+            <i class="ph ph-plus"></i>
+            Adicionar Ingrediente
+          </button>
+        </div>
+
+        <div class="ingredients-columns">
+          <!-- Coluna Ingredientes -->
+          <section class="ingredients-column">
+            <h2 class="section-title">Ingredientes</h2>
+            <div class="search-container">
+              <div class="search-input">
+                <i class="ph ph-magnifying-glass"></i>
+                <input
+                  type="text"
+                  placeholder="Buscar ingredientes..."
+                  id="searchIngredients"
+                />
+              </div>
+            </div>
+            <div class="ingredients-section">
+              <div class="ingredient-grid" id="ingredientsGrid">
+                <!-- Ingredient cards will be inserted here dynamically -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Coluna Meus Ingredientes -->
+          <section class="ingredients-column">
+            <h2 class="section-title">Meus Ingredientes</h2>
+            <div class="search-container">
+              <div class="search-input">
+                <i class="ph ph-magnifying-glass"></i>
+                <input
+                  type="text"
+                  placeholder="Buscar meus ingredientes..."
+                  id="searchMyIngredients"
+                />
+              </div>
+            </div>
+            <div class="ingredients-section">
+              <div class="ingredient-grid">
+                <!-- Card 1 -->
+                <div class="ingredient-card">
+                  <div class="ingredient-card-content">
+                    <div class="card-header">
+                      <h3 class="ingredient-title">Arroz Integral</h3>
+                      <div class="card-actions">
+                        <button class="action-button edit" title="Editar">
+                          <i class="ph ph-pencil"></i>
+                        </button>
+                        <button class="action-button delete" title="Excluir">
+                          <i class="ph ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="ingredient-info">
+                      <p class="category">Categoria: Grãos</p>
+                      <div class="nutritional-info">
+                        <p>Valor Calórico: 112 kcal/100g</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="ingredient-card">
+                  <div class="ingredient-card-content">
+                    <div class="card-header">
+                      <h3 class="ingredient-title">Batata</h3>
+                      <div class="card-actions">
+                        <button class="action-button edit" title="Editar">
+                          <i class="ph ph-pencil"></i>
+                        </button>
+                        <button class="action-button delete" title="Excluir">
+                          <i class="ph ph-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="ingredient-info">
+                      <p class="category">Categoria: Legumes</p>
+                      <div class="nutritional-info">
+                        <p>Valor Calórico: 77 kcal/100g</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Modal Adicionar Ingrediente -->
+        <div class="modal" id="addIngredientModal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Adicionar Ingrediente</h2>
+              <button class="close-modal">
+                <i class="ph ph-x"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="addIngredientForm">
+                <div class="form-group">
+                  <label for="ingredientName">Nome</label>
+                  <input type="text" id="ingredientName" name="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="ingredientCategory">Categoria</label>
+                  <select id="ingredientCategory" name="category" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="CARNES">Carnes</option>
+                    <option value="AVES">Aves</option>
+                    <option value="PEIXES">Peixes</option>
+                    <option value="LEGUMES">Legumes</option>
+                    <option value="VERDURAS">Verduras</option>
+                    <option value="FRUTAS">Frutas</option>
+                    <option value="GRAOS">Grãos</option>
+                    <option value="CEREAIS">Cereais</option>
+                    <option value="FARINHAS">Farinhas</option>
+                    <option value="MASSAS">Massas</option>
+                    <option value="LATICINIOS">Laticínios</option>
+                    <option value="TEMPEROS">Temperos</option>
+                    <option value="MOLHOS">Molhos</option>
+                    <option value="DOCES">Doces</option>
+                    <option value="BEBIDAS">Bebidas</option>
+                    <option value="OLEOS">Óleos</option>
+                    <option value="CASTANHAS">Castanhas</option>
+                    <option value="INDUSTRIALIZADOS">Industrializados</option>
+                    <option value="FERMENTADOS">Fermentados</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="ingredientCalories">Calorias (kcal)</label>
+                    <input
+                      type="number"
+                      id="ingredientCalories"
+                      name="calories"
+                      min="0"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="ingredientWeight">Peso</label>
+                    <input
+                      type="number"
+                      id="ingredientWeight"
+                      name="weight"
+                      min="0"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" class="primary-button add-ingredient">
+                    Adicionar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <p>&copy; 2025 Fridge Easy. Todos os direitos reservados.</p>
+          <p>
+            Website by
+            <a
+              href="https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti2-2025-1-g19-fridgeeasy"
+              target="_blank"
+              class="footer-link"
+              >GitHub Fridge Easy</a
+            >
+          </p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./assets/js/ingredientes.js"></script>
+  </body>
+</html>

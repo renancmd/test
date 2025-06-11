@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d1d8d0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #A4ABA3;
+    z-index: 1000;
+}
+
+.img-logo {
+    text-align: center; 
+}
+
+.img-logo img {
+    width: 80%;
+    max-width: 100px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+.img-logo img:hover {
+    transform: scale(1.12);
+}
+
+.titulo-fav h1 {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px auto 50px auto;
+    padding: 15px 20px;
+    background-color: #889A85 ;
+    color: white;
+    border-color: #000000;
+    border-radius: 20px;
+    width: max-content;
+}
+
+.receitas-fav img {
+    width: 100%;
+    max-width: 50px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    cursor: pointer;
+}
+
+.receita a {
+    border: 2px solid #d5741a;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .3s ease;
+    text-decoration: none;
+}
+
+.receita a:hover {
+    transform: scale(1.12);
+} 
+
+.receita a img {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    padding: 3px 3px 0 3px;
+}
+
+.receita {
+    display: flex;
+    gap: 10px;
+    padding: 0 24px 24px 24px;
+}
+
+.receita h3 {
+    background-color: #d5741a;
+    padding: 5px;  
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.receita button {
+    display: flex;
+    align-items: center;
+    max-width: 50px;
+    width: 100%;
+    height: 100%;
+    max-height: 50px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.receita button i {
+    width: 100%;
+    font-size: 20px;
+    color: black;
+}
+
+#listaReceitas {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 24px;
+    padding: 0 24px 24px 24px;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+.footer {
+    background-color: #A4ABA3;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #d1d8d0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #879185;
+}
+
+@media (max-width: 780px) {
+    #listaReceitas {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
