@@ -39,11 +39,12 @@ public class IngredienteDAO extends DAO {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String name = rs.getString("nome");
                 String category = rs.getString("categoria");
                 String nutritionalValue = rs.getString("valor_nutricional");
 
-                Ingrediente ingrediente = new Ingrediente(name, category, nutritionalValue);
+                Ingrediente ingrediente = new Ingrediente(id, name, category, nutritionalValue);
                 ingredientes.add(ingrediente);
             }
 

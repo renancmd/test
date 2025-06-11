@@ -11,8 +11,8 @@ O Fridge Easy é um projeto acadêmico da PUC Minas, criado por alunos da discip
 
 ## Professores responsáveis
 
-* Amália Soares Vieira de Vasconcelos
-* Sandro Jerônimo de Almeida
+* Nome completo do professor 1
+* Nome completo do professor 2
 
 ## Instruções de utilização
 

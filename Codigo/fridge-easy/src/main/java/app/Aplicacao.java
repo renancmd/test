@@ -218,7 +218,8 @@ public class Aplicacao {
                 for (int i = 0; i < lista.size(); i++) {
                     Ingrediente ing = lista.get(i);
                     String itemJson = String.format(
-                            "{\"name\":\"%s\",\"category\":\"%s\",\"nutritional_value\":\"%s\"}",
+                            "{\"id\":%d,\"name\":\"%s\",\"category\":\"%s\",\"nutritional_value\":\"%s\"}",
+                            ing.getId(),
                             escape(ing.getName()),
                             escape(ing.getCategory()),
                             escape(ing.getNutritionalValue()));
